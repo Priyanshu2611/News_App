@@ -5,7 +5,7 @@ const maxTextLength = 100;
 window.addEventListener('load',() => fetchNews("India"));
 
 async function fetchNews(query){
-    const res = await fetch(`${url}${query}&apiKey=${API_KEY}&gilanguage=en`);
+    const res = await fetch(`${url}${query}&apiKey=${API_KEY}&language=en`);
     const data = await res.json();
     const sortedArticles = data.articles.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
     const filteredArticles = sortedArticles.filter(article => article.urlToImage);
