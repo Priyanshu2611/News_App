@@ -9,8 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -19,24 +17,29 @@
             <a href="#" onclick="reload()" class="company-logo">
                 <img src="./assets/logo.png" alt="company logo">
             </a>
-            <div class="nav-links">
+            <div id="hamburger-menu" class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div id="nav-links" class="nav-links">
                 <ul class="flex">
                     <li class="hover-link nav-item" id="technology" onclick="onNavItemClick('technology')">Technology</li>
                     <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
                     <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
                 </ul>
-            </div>
-            <div class="search-bar flex">
-                <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
-                <button id="search-button" class="search-button">Search</button>
+                <div id="search-bar" class="search-bar flex">
+                    <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
+                    <button id="search-button" class="search-button">Search</button>
+                </div>
             </div>
         </div>
     </nav>
     
     <main>
         <div class="cards-container container flex" id="cards-container">
-            
         </div>
+        <div class="loader"></div>
     </main>
 
     <template id="template-news-card">

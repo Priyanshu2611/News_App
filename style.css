@@ -1,157 +1,355 @@
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 :root {
-    --primary-text-color: #183b56;
-    --secondary-text-color: #577592;
-    --accent-color: #2294ed;
-    --accent-color-dark: #1d69a3;
-}
-body{
-    font-family: 'Poppins', sans-serif;
-    color: var(--primary-text-color);
+    --primary-text-color: #1a1a1a; /* Dark primary text color */
+    --secondary-text-color: #757575; /* Light secondary text color */
+    --accent-color: #4caf50; /* Accent color (green) */
+    --accent-color-dark: #388e3c; /* Darker shade of accent color */
+    --background-color: #f5f5f5; /* Light background color */
+    --card-background: #ffffff; /* Card background color */
+    --card-shadow: rgba(0, 0, 0, 0.1); /* Card shadow color */
+    --hover-shadow: rgba(0, 0, 0, 0.2); /* Hover shadow color */
 }
 
-p{
-    font-family: "Roboto",sans-serif;
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
     color: var(--secondary-text-color);
     line-height: 1.4rem;
 }
 
-a{
+a {
     text-decoration: none;
+    color: var(--accent-color);
+    font-size: 20px;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-.flex{
+.flex {
     display: flex;
     align-items: center;
 }
 
-.container{
+.container {
     max-width: 1180px;
-    margin-inline: auto;
-    overflow: hidden;
+    margin: auto;
+    padding: 0 20px;
 }
 
-nav{
-    background-color: #f3faff;
-    box-shadow: 0 0 4px #bbd0e2;
+nav {
+    background-color: #f3f3f3;
+    box-shadow: 0 2px 4px var(--card-shadow);
     position: fixed;
     top: 0;
     z-index: 99;
     left: 0;
     right: 0;
+    padding: 10px 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
 }
 
-.main-nav{
+.main-nav {
     justify-content: space-between;
-    padding-block: 8px;
+    width: 100%;
 }
 
-.company-logo img{
+.company-logo img {
     width: 120px;
+    padding: 10px;
 }
 
-.nav-links ul{
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 16px;
+    height: 100%; /* Vertically center nav links */
 }
 
-.hover-link{
+.nav-links ul {
+    display: flex;
+    gap: 16px;
+    height: 100%; /* Vertically center nav links */
+    align-items: center; /* Vertically center nav links */
+}
+
+.nav-links ul li {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+}
+
+.hover-link {
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.hover-link:hover{
-    color: var(--secondary-text-color);
-}
-
-.hover-link:active{
-    color: red;
-}
-
-.nav-item.active{
+.hover-link:hover {
     color: var(--accent-color);
 }
 
-.search-bar{
+.hover-link:active {
+    color: var(--accent-color-dark);
+}
+
+.nav-item.active {
+    color: var(--accent-color);
+}
+
+.search-bar {
     height: 32px;
     gap: 8px;
-    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px 10px;
 }
 
-.news-input{
-    width: 200px;
-    height: 100%;
-    padding-inline: 12px;
-    border-radius: 4px;
-    border: 2px solid #bbd0e2;
-    font-family: "Roboto",sans-serif;
-    
-} 
+.news-input {
+    width: calc(100% - 48px); /* Adjusted width for better visibility */
+    padding: 10px; /* Improved padding for better input feel */
+    border: 2px solid #ccc; /* Lighter border color */
+    border-radius: 4px; /* Rounded border */
+    font-family: "Roboto", sans-serif; /* Updated font family */
+    font-size: 16px; /* Increased font size */
+    margin-top: 5px;
+    margin-right: -10px;
+    margin-left: 10px;
+    margin-bottom: 15px;
 
-.search-button{
+}
+
+.news-input:focus {
+    border-color: var(--accent-color);
+}
+
+.search-button {
     background-color: var(--accent-color);
-    color: white;
-    padding: 8px 24px;
+    color: #fff; /* White text color */
+    padding: 12px 24px; /* Increased padding for better touch target */
     border: none;
-    border-radius: 4px;
+    border-radius: 4px; /* Rounded border */
     cursor: pointer;
-    font-family: "Roboto",sans-serif;
+    font-family: "Roboto", sans-serif; /* Updated font family */
+    font-size: 16px; /* Increased font size */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition effect */
+    margin-right: -20px;
+    margin-left: 15px;
+    margin-bottom: 8px;
+    
 }
 
-.search-button:hover{
+.search-button:hover {
     background-color: var(--accent-color-dark);
 }
 
-main{
-    padding-block: 20px;
-    margin-top: 80px;
-}
-
-.cards-container{
-    justify-content: space-between;
-    flex-wrap: wrap;
-    row-gap: 20px;
-    align-items: start;
-
-}
-
-.card{
-    width: 360px;
-    min-height: 400px;
-    box-shadow: 0 0 4px #d4ecff;
-    border-radius: 4px;
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
     cursor: pointer;
-    background-color: #fff;
-    overflow: hidden ;
+    padding: 10px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
     transition: all 0.3s ease;
 }
 
-.card:hover{
-    box-shadow: 1px 1px 8px #d4ecff;
+main {
+    padding: 80px 0 20px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card {
+    width: calc(33.33% - 20px);
+    min-height: 400px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--card-background);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 6px 12px var(--hover-shadow);
     background-color: #f9fdff;
     transform: translateY(-2px);
 }
 
-.card-header img{
+.card-header img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-
+    border-bottom: 1px solid #eaeaea;
 }
 
-.card-content{
+.card-content {
     padding: 12px;
 }
 
-.news-source{
-    margin-block: 12px;
+.news-source {
+    margin: 12px 0;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid var(--accent-color);
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px; /* Adjust container padding for medium-sized screens */
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 10px;
+        height: auto;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 4px var(--card-shadow);
+        z-index: 100;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 0;
+        height: auto;
+        align-items: center;
+    }
+
+    .nav-links ul li {
+        padding: 12px 0;
+        width: 100%;
+    }
+
+    .search-bar {
+        display: flex;
+        flex-direction: row; /* Ensure search bar is horizontally aligned */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        width: 100%;
+        padding: 16px 0;
+    }
+
+    .news-input {
+        width: calc(100% - 48px);
+        padding: 12px;
+    }
+
+    .search-button {
+        padding: 12px 24px;
+    }
+
+    .cards-container {
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px; /* Adjust container padding for smaller screens */
+    }
+
+    .company-logo img {
+        width: 100px; /* Decrease logo size for smaller screens */
+    }
+
+    .search-bar {
+        max-width: 300px; /* Limit search bar width on smaller screens */
+    }
+}
+
+/* Additional UI Enhancements */
+
+.company-logo img {
+    max-width: 100%; /* Ensure logo scales appropriately */
+}
+
+.search-bar {
+    max-width: 400px; /* Limit search bar width on larger screens for better readability */
+    margin-left: auto; /* Move search bar to the right on larger screens */
+    margin-right: 20px; /* Add some margin for better spacing */
+}
+
+.search-button {
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition effect for better interaction */
+}
+
+.search-button:hover {
+    background-color: var(--accent-color-dark);
+    transform: translateY(-2px); /* Add subtle hover effect */
+}
+
+.card {
+    border: 1px solid #f0f0f0; /* Add border for card separation */
+}
+
+.card:hover {
+    border-color: var(--accent-color); /* Change border color on hover for visual feedback */
+    transform: translateY(-4px); /* Add subtle hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhance box-shadow on hover */
+}
