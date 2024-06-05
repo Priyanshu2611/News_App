@@ -54,7 +54,6 @@ ul {
 
 .main-nav {
     background-color: #f3f3f3;
-    
     position: fixed;
     top: 0;
     z-index: 99;
@@ -72,7 +71,9 @@ ul {
 }
 
 .company-logo img {
-    width: 120px;
+    width: 80px;
+    height: 50px;
+    mix-blend-mode: multiply;
 }
 
 .nav-links {
@@ -82,7 +83,7 @@ ul {
     justify-content: center;
     gap: 16px;
     height: 100%; /* Vertically center nav links */
-    margin-left: 50px;
+    margin-left: 90px;
 }
 
 .nav-links ul {
