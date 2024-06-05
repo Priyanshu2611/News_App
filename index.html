@@ -12,8 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div class="main-nav container flex">
+    <nav class="main-nav container flex">
             <a href="#" onclick="reload()" class="company-logo">
                 <img src="./assets/logo.png" alt="company logo">
             </a>
@@ -27,13 +26,14 @@
                     <li class="hover-link nav-item" id="technology" onclick="onNavItemClick('technology')">Technology</li>
                     <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
                     <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+                    <li class="hover-link nav-item" id="sports" onclick="onNavItemClick('sports')">Sports</li>
                 </ul>
-                <div id="search-bar" class="search-bar flex">
+            </div>
+            <div id="search-bar" class="search-bar flex">
                     <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
                     <button id="search-button" class="search-button">Search</button>
-                </div>
             </div>
-        </div>
+            
     </nav>
     
     <main>
